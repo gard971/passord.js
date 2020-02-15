@@ -5,9 +5,9 @@
   var requestId
   check()
   function check(){
-    if(sessionStorage.getItem("key")){
+    if(sessionStorage.getItem("key") || localStorage.getItem("key")){
     requestId = Math.random()
-    socket.emit("check", sessionStorage.getItem("key"), requestId)
+    socket.emit("check", sessionStorage.getItem("key"), requestId, localStorage.getItem("key"))
   }
   else{
       console.log("else ran")
